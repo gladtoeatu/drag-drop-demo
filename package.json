@@ -1,0 +1,65 @@
+{
+  "name": "drag-drop-demo",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "npx lefthook install",
+    "commit": "git-cz",
+    "lint": "biome lint",
+    "lint:check": "biome check --write",
+    "lint:fix": "biome check --write --unsafe",
+    "format": "biome format --write",
+    "clear": "rimraf dist && rimraf node_modules",
+    "release:pre": "tsx scripts/release/index.ts",
+    "release:commit": "tsx scripts/release/commit.ts",
+    "release": "npm-run-all --serial release:pre release:commit",
+    "changelog": "tsx scripts/changelog/index.ts"
+  },
+  "dependencies": {
+    "gridstack": "^10.3.1",
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.4.0",
+    "@commitlint/types": "^19.0.3",
+    "@inquirer/prompts": "^5.3.8",
+    "@pnpm/find-workspace-packages": "^6.0.9",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^20.11.24",
+    "@types/qs": "^6.9.15",
+    "@types/semver": "^7.5.8",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "commitizen": "^4.3.0",
+    "consola": "^3.2.3",
+    "dayjs": "^1.11.13",
+    "execa": "^9.3.1",
+    "lefthook": "^1.7.14",
+    "less": "^4.2.0",
+    "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
+    "qs": "^6.13.0",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.21.0",
+    "semver": "^7.6.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "engines": {
+    "node": "20 || >=22"
+  }
+}
